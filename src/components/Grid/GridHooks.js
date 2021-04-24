@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react"
-import { getWinner, randomChoice, isFull } from "./GridHelper"
+import { useState, useEffect, useContext } from "react"
+import { randomChoice } from "./GridHelper"
 import { botMove } from "./Bot"
+import { ModeContext } from "../../App"
 
 export const useTurn = () => {
   // X is for Human, O is for Human or Bot
@@ -11,7 +12,8 @@ export const useTurn = () => {
   return [currentTurn, changeTurn]
 }
 
-export const useGrid = (props) => {
+export const useGrid = () => {
+  const { mode } = useContext(ModeContext)
   const [grid, setGrid] = useState([
     ["", "", ""],
     ["", "", ""],
@@ -38,29 +40,15 @@ export const useGrid = (props) => {
   }
 
   useEffect(() => {
-    let winner = getWinner(grid)
-
-    if (winner !== "") {
-      alert(`${winner} wins!`)
-      clearGrid()
-      props.setMode("")
-    } else if (isFull(grid)) {
-      alert("Tie!")
-      clearGrid()
-      props.setMode("")
-    } else if (
-      props.mode !== "" &&
-      props.mode !== "HH" &&
-      currentTurn === "O"
-    ) {
-      let [row, col] = botMove([...grid], props.mode)
+    if (mode !== "" && mode !== "HH" && currentTurn === "O") {
+      let [row, col] = botMove([...grid], mode)
       setTimeout(() => {
         fill(row, col)
-      }, 500)
+      }, 1000)
     }
 
     // eslint-disable-next-line
   }, [grid])
 
-  return [grid, fill, currentTurn]
+  return [grid, clearGrid, fill, currentTurn]
 }

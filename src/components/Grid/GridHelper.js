@@ -60,8 +60,8 @@ export const availableMoves = (grid) => {
 export const minimax = (grid, depth = 1, isMaximizing = false) => {
   let winner = getWinner(grid)
 
-  if (winner === "O") return 100 - depth
-  if (winner === "X") return -100 + depth
+  if (winner === "O") return 100
+  if (winner === "X") return -100
   if (isFull(grid)) return 0
 
   let scores = []

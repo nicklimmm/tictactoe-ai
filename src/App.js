@@ -1,7 +1,9 @@
 import "./App.css"
-import React, { useState } from "react"
-import Grid from "./components/Grid/Grid"
+import Game from "./components/Game/Game"
 import Menu from "./components/Menu/Menu"
+import { createContext, useState } from "react"
+
+const ModeContext = createContext()
 
 function App() {
   /* 
@@ -13,17 +15,17 @@ function App() {
   "H" - Hard
   "I" - Impossible
   */
+
   const [mode, setMode] = useState("")
 
   return (
     <div>
-      {mode !== "" ? (
-        <Grid mode={mode} setMode={setMode} />
-      ) : (
-        <Menu mode={mode} setMode={setMode} />
-      )}
+      <ModeContext.Provider value={{ mode, setMode }}>
+        {mode !== "" ? <Game /> : <Menu />}
+      </ModeContext.Provider>
     </div>
   )
 }
 
 export default App
+export { ModeContext }
