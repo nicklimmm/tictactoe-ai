@@ -1,4 +1,3 @@
-import "./App.css"
 import Game from "./components/Game/Game"
 import Menu from "./components/Menu/Menu"
 import { createContext, useState } from "react"

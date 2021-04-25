@@ -1,10 +1,24 @@
 import { useContext } from "react"
+import { makeStyles } from "@material-ui/core/styles"
+import { Box } from "@material-ui/core"
 import { GameContext } from "../../providers/GameProvider"
 import { ModeContext } from "../../App"
 import EndModal from "../EndGameModal/EndGameModal"
-import "./Grid.css"
+import "./Grid.scss"
+
+const useStyles = makeStyles({
+  wrapper: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+
+    height: "100vh",
+  },
+})
 
 const Grid = () => {
+  const classes = useStyles()
   const { grid, fill, currentTurn } = useContext(GameContext)
   const { mode } = useContext(ModeContext)
 
@@ -21,7 +35,7 @@ const Grid = () => {
   }
 
   return (
-    <>
+    <Box className={classes.wrapper}>
       <EndModal></EndModal>
       <h1 id="turn-display">{displayTurn()} Turn</h1>
       <div className="grid-container">
@@ -80,7 +94,7 @@ const Grid = () => {
           {grid[2][2]}
         </button>
       </div>
-    </>
+    </Box>
   )
 }
 

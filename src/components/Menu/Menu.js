@@ -1,29 +1,78 @@
 import { useContext } from "react"
-import { Button, ButtonGroup, Container, Box } from "@material-ui/core"
+import {
+  Button,
+  ButtonGroup,
+  Grid,
+  Card,
+  CardHeader,
+  Typography,
+  Container,
+} from "@material-ui/core"
 import { ModeContext } from "../../App"
-import "./Menu.css"
+import { makeStyles } from "@material-ui/core/styles"
+
+const useStyles = makeStyles({
+  buttonContainer: {
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: "12px",
+  },
+  grid: {
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh",
+  },
+})
+
+const ModeButton = ({ onClick, children, ...others }) => {
+  return (
+    <Button
+      size="small"
+      // style={{ margin: "5px" }}
+      onClick={onClick}
+      {...others}
+    >
+      {children}
+    </Button>
+  )
+}
+
+ModeButton.muiName = ButtonGroup.muiName
 
 const Menu = () => {
+  const classes = useStyles()
   const { setMode } = useContext(ModeContext)
 
-  // returns function
+  // Returns function
   const play = (mode) => {
     return () => setMode(mode)
   }
 
   return (
-    <Box>
-      <Container maxWidth="md">
-        <h1 className="title">Welcome to TicTacToe AI</h1>
-        <ButtonGroup orientation="vertical" color="primary" variant="contained">
-          <Button onClick={play("HH")}>Human vs Human</Button>
-          <Button onClick={play("E")}>Easy</Button>
-          <Button onClick={play("M")}>Medium</Button>
-          <Button onClick={play("H")}>Hard</Button>
-          <Button onClick={play("I")}>Impossible</Button>
-        </ButtonGroup>
-      </Container>
-    </Box>
+    <Grid className={classes.grid} container>
+      <Card variant="outlined">
+        <CardHeader
+          title={
+            <Typography align="center" variant="h4">
+              Welcome to TicTacToe AI
+            </Typography>
+          }
+        ></CardHeader>
+        <Container className={classes.buttonContainer}>
+          <ButtonGroup
+            orientation="vertical"
+            color="primary"
+            variant="contained"
+          >
+            <ModeButton onClick={play("HH")}>Human vs Human</ModeButton>
+            <ModeButton onClick={play("E")}>Easy</ModeButton>
+            <ModeButton onClick={play("M")}>Medium</ModeButton>
+            <ModeButton onClick={play("H")}>Hard</ModeButton>
+            <ModeButton onClick={play("I")}>Impossible</ModeButton>
+          </ButtonGroup>
+        </Container>
+      </Card>
+    </Grid>
   )
 }
 
