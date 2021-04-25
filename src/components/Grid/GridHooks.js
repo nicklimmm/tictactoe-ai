@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react"
-import { randomChoice } from "./GridHelper"
+import { randomChoice, getWinner, isFull } from "./GridHelper"
 import { botMove } from "./Bot"
 import { ModeContext } from "../../App"
 
@@ -40,7 +40,12 @@ export const useGrid = () => {
   }
 
   useEffect(() => {
-    if (mode !== "" && mode !== "HH" && currentTurn === "O") {
+    if (
+      mode !== "HH" &&
+      !isFull(grid) &&
+      getWinner(grid) === "" &&
+      currentTurn === "O"
+    ) {
       let [row, col] = botMove([...grid], mode)
       setTimeout(() => {
         fill(row, col)
