@@ -1,23 +1,24 @@
 import { useContext } from "react"
+import { Modal, Paper } from "@material-ui/core"
+import { makeStyles } from "@material-ui/core/styles"
 import { GameContext } from "../../providers/GameProvider"
 import { ModeContext } from "../../App"
-import { Modal, Paper } from "@material-ui/core"
 import { isFull, getWinner } from "../Grid/GridHelper"
 
-const modalStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  textAlign: "center",
-}
-
-const paperStyle = {
-  padding: "15px",
-  width: "50vmin",
-  height: "50vmin",
-}
+const useStyles = makeStyles({
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+  },
+  paper: {
+    padding: "15px",
+  },
+})
 
 const EndModal = () => {
+  const classes = useStyles()
   const { mode, setMode } = useContext(ModeContext)
   const { grid, clearGrid } = useContext(GameContext)
 
@@ -31,9 +32,9 @@ const EndModal = () => {
     if (winner === "") return "Tied"
     // reversed
     else if (mode === "HH") {
-      return winner === "X" ? "Player 1 Won" : "Player 2 Won"
+      return winner === "X" ? "Player 1 Wins!" : "Player 2 Wins!"
     } else {
-      return winner === "X" ? "You Won" : "You Lost"
+      return winner === "X" ? "You Win!" : "You Lose!"
     }
   }
 
@@ -43,14 +44,12 @@ const EndModal = () => {
   }
 
   return (
-    <Modal open={isDone()} onClose={handleClose} style={modalStyle}>
-      <Paper style={paperStyle}>
+    <Modal open={isDone()} onClose={handleClose} className={classes.modal}>
+      <Paper className={classes.paper}>
         <h2>{displayWinner()}</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-          architecto illo doloremque, quod laborum quaerat modi aliquid nam quae
-          omnis.
-        </p>
+        {mode !== "HH" && getWinner(grid) === "O" && (
+          <p>{"Try again next time :)"}</p>
+        )}
       </Paper>
     </Modal>
   )
