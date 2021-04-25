@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/tictactoe-ai/static/css/main.6922d546.chunk.css",
+    "main.js": "/tictactoe-ai/static/js/main.cd7f0875.chunk.js",
+    "main.js.map": "/tictactoe-ai/static/js/main.cd7f0875.chunk.js.map",
+    "runtime-main.js": "/tictactoe-ai/static/js/runtime-main.633d30d3.js",
+    "runtime-main.js.map": "/tictactoe-ai/static/js/runtime-main.633d30d3.js.map",
+    "static/js/2.906d5ad8.chunk.js": "/tictactoe-ai/static/js/2.906d5ad8.chunk.js",
+    "static/js/2.906d5ad8.chunk.js.map": "/tictactoe-ai/static/js/2.906d5ad8.chunk.js.map",
+    "static/js/3.69935443.chunk.js": "/tictactoe-ai/static/js/3.69935443.chunk.js",
+    "static/js/3.69935443.chunk.js.map": "/tictactoe-ai/static/js/3.69935443.chunk.js.map",
+    "index.html": "/tictactoe-ai/index.html",
+    "static/css/main.6922d546.chunk.css.map": "/tictactoe-ai/static/css/main.6922d546.chunk.css.map",
+    "static/js/2.906d5ad8.chunk.js.LICENSE.txt": "/tictactoe-ai/static/js/2.906d5ad8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.633d30d3.js",
+    "static/js/2.906d5ad8.chunk.js",
+    "static/css/main.6922d546.chunk.css",
+    "static/js/main.cd7f0875.chunk.js"
+  ]
+}
