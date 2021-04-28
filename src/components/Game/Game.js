@@ -5,7 +5,7 @@ import EndModal from "../EndGameModal/EndGameModal"
 const Game = () => {
   return (
     <GameProvider>
-      <EndModal />
+      <EndModal></EndModal>
       <Grid />
     </GameProvider>
   )

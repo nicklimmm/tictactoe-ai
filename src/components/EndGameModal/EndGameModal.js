@@ -1,32 +1,17 @@
 import { useContext } from "react"
-import { Modal, Paper, Button } from "@material-ui/core"
-import { makeStyles } from "@material-ui/core/styles"
 import { GameContext } from "../../providers/GameProvider"
 import { ModeContext } from "../../App"
 import { isFull, getWinner } from "../Grid/GridHelper"
 
-const useStyles = makeStyles({
-  modal: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    textAlign: "center",
-  },
-  paper: {
-    padding: "15px",
-  },
-})
-
 const EndModal = () => {
-  const classes = useStyles()
   const { mode, setMode } = useContext(ModeContext)
   const { grid } = useContext(GameContext)
 
-  const isDone = () => {
+  const isDone = (grid) => {
     return isFull(grid) || getWinner(grid) !== ""
   }
 
-  const displayWinner = () => {
+  const displayWinner = (grid) => {
     let winner = getWinner(grid)
 
     if (winner === "") return "Tied"
@@ -46,20 +31,20 @@ const EndModal = () => {
   }
 
   return (
-    <Modal open={isDone()} onClose={handleClose} className={classes.modal}>
-      <Paper className={classes.paper}>
-        <h2>{displayWinner()}</h2>
+    <>
+      {isDone(grid) && (
+        <div className="modal">
+          <h2>{displayWinner(grid)}</h2>
 
-        {/* Only display when playing with bots */}
-        {mode !== "HH" && getWinner(grid) === "O" && (
-          <p>{"Try again next time :)"}</p>
-        )}
+          {/* Only display when playing with bots */}
+          {mode !== "HH" && getWinner(grid) === "O" && (
+            <p>{"Try again next time :)"}</p>
+          )}
 
-        <Button color="primary" variant="contained" onClick={handleClose}>
-          Return
-        </Button>
-      </Paper>
-    </Modal>
+          <button onClick={handleClose}>Return</button>
+        </div>
+      )}
+    </>
   )
 }
 
