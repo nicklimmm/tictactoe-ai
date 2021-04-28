@@ -1,12 +1,9 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# src
-App.test.js
-reportWebVitals.js
-setupTests.js
-
-# create react app
+# create react app markdown
 reactapp.md
+
+# designs
+/src/scss
+/src/svg
 
 # dependencies
 /node_modules
