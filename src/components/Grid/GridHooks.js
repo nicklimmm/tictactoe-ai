@@ -22,14 +22,6 @@ export const useGrid = () => {
 
   const [currentTurn, changeTurn] = useTurn()
 
-  const clearGrid = () => {
-    setGrid([
-      ["", "", ""],
-      ["", "", ""],
-      ["", "", ""],
-    ])
-  }
-
   const fill = (row, col) => {
     if (grid[row][col] === "") {
       let temp = [...grid]
@@ -55,5 +47,5 @@ export const useGrid = () => {
     // eslint-disable-next-line
   }, [grid])
 
-  return [grid, clearGrid, fill, currentTurn]
+  return [grid, fill, currentTurn]
 }

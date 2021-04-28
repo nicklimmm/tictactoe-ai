@@ -37,8 +37,6 @@ const ModeButton = ({ onClick, children, ...others }) => {
   )
 }
 
-ModeButton.muiName = ButtonGroup.muiName
-
 const Menu = () => {
   const classes = useStyles()
   const { setMode } = useContext(ModeContext)
