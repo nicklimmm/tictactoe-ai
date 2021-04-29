@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/tictactoe-ai/static/css/main.6a5897e9.chunk.css",
-    "main.js": "/tictactoe-ai/static/js/main.7fc6e7fa.chunk.js",
-    "main.js.map": "/tictactoe-ai/static/js/main.7fc6e7fa.chunk.js.map",
+    "main.css": "/tictactoe-ai/static/css/main.9e3707f8.chunk.css",
+    "main.js": "/tictactoe-ai/static/js/main.f174f278.chunk.js",
+    "main.js.map": "/tictactoe-ai/static/js/main.f174f278.chunk.js.map",
     "runtime-main.js": "/tictactoe-ai/static/js/runtime-main.dbc2fd6d.js",
     "runtime-main.js.map": "/tictactoe-ai/static/js/runtime-main.dbc2fd6d.js.map",
-    "static/js/2.a812f659.chunk.js": "/tictactoe-ai/static/js/2.a812f659.chunk.js",
-    "static/js/2.a812f659.chunk.js.map": "/tictactoe-ai/static/js/2.a812f659.chunk.js.map",
+    "static/js/2.80cfe9f3.chunk.js": "/tictactoe-ai/static/js/2.80cfe9f3.chunk.js",
+    "static/js/2.80cfe9f3.chunk.js.map": "/tictactoe-ai/static/js/2.80cfe9f3.chunk.js.map",
     "index.html": "/tictactoe-ai/index.html",
-    "static/css/main.6a5897e9.chunk.css.map": "/tictactoe-ai/static/css/main.6a5897e9.chunk.css.map",
-    "static/js/2.a812f659.chunk.js.LICENSE.txt": "/tictactoe-ai/static/js/2.a812f659.chunk.js.LICENSE.txt"
+    "static/css/main.9e3707f8.chunk.css.map": "/tictactoe-ai/static/css/main.9e3707f8.chunk.css.map",
+    "static/js/2.80cfe9f3.chunk.js.LICENSE.txt": "/tictactoe-ai/static/js/2.80cfe9f3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.dbc2fd6d.js",
-    "static/js/2.a812f659.chunk.js",
-    "static/css/main.6a5897e9.chunk.css",
-    "static/js/main.7fc6e7fa.chunk.js"
+    "static/js/2.80cfe9f3.chunk.js",
+    "static/css/main.9e3707f8.chunk.css",
+    "static/js/main.f174f278.chunk.js"
   ]
 }
