@@ -1,5 +1,5 @@
 import { createContext } from "react"
-import { useGrid } from "../components/Grid/GridHooks"
+import { useGrid } from "../Grid/GridHooks"
 
 const GameContext = createContext()
 
