@@ -1,26 +1,27 @@
+@import "../../scss/variables";
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100vh;
+}
+
 .grid-container {
   display: grid;
   height: unquote("min(100vmin, 400px)");
   width: unquote("min(100vmin, 400px)");
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 10px 10px;
+  gap: 7px 7px;
 
   padding: 20px;
   margin: 0 auto;
 }
 
-.cell {
-  border-radius: 5px;
-  font-size: 40px;
-}
-
-#turn-display {
+.turn-display {
   text-align: center;
-}
-
-.disabled {
-  pointer-events: none;
 }
 
 .upper-left {

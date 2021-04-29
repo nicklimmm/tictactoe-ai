@@ -1,4 +1,4 @@
-import { GameProvider } from "../../providers/GameProvider"
+import { GameProvider } from "./GameProvider"
 import Grid from "../Grid/Grid"
 import EndModal from "../EndGameModal/EndGameModal"
 

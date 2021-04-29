@@ -1,7 +1,10 @@
 import { useContext } from "react"
-import { GameContext } from "../../providers/GameProvider"
+import { GameContext } from "../Game/GameProvider"
 import { ModeContext } from "../../App"
 import { isFull, getWinner } from "../Grid/GridHelper"
+import Button from "../Button/Button"
+
+import "./EndGameModal.scss"
 
 const EndModal = () => {
   const { mode, setMode } = useContext(ModeContext)
@@ -34,14 +37,16 @@ const EndModal = () => {
     <>
       {isDone(grid) && (
         <div className="modal">
-          <h2>{displayWinner(grid)}</h2>
+          <div className="modal-content">
+            <h2 className="display-winner">{displayWinner(grid)}</h2>
 
-          {/* Only display when playing with bots */}
-          {mode !== "HH" && getWinner(grid) === "O" && (
-            <p>{"Try again next time :)"}</p>
-          )}
+            {/* Only display when playing with bots */}
+            {mode !== "HH" && getWinner(grid) === "O" && (
+              <p>{"Try again next time :)"}</p>
+            )}
 
-          <button onClick={handleClose}>Return</button>
+            <Button onClick={handleClose}>Return</Button>
+          </div>
         </div>
       )}
     </>

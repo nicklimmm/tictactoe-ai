@@ -1,12 +1,10 @@
 import { useContext } from "react"
 import { ModeContext } from "../../App"
+import Button from "../Button/Button"
+import "./Menu.scss"
 
-const ModeButton = ({ onClick, children, ...others }) => {
-  return (
-    <button onClick={onClick} {...others}>
-      {children}
-    </button>
-  )
+const ModeButton = ({ children, ...others }) => {
+  return <Button {...others}>{children}</Button>
 }
 
 const Menu = () => {
@@ -18,9 +16,9 @@ const Menu = () => {
   }
 
   return (
-    <div>
-      <h1>Welcome to TicTacToe AI</h1>
-      <div>
+    <div className="menu">
+      <h1 className="title">Welcome to TicTacToe AI</h1>
+      <div className="button-group">
         <ModeButton onClick={play("HH")}>Human vs Human</ModeButton>
         <ModeButton onClick={play("E")}>Easy</ModeButton>
         <ModeButton onClick={play("M")}>Medium</ModeButton>
