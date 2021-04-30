@@ -1,0 +1,29 @@
+@import "./scss/variables";
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
+}
+
+html {
+  background-color: $th-1;
+}
+
+@media only screen and (min-width: $laptop) {
+  html {
+    font-size: 18px;
+  }
+}

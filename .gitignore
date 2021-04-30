@@ -1,9 +1,8 @@
 # create react app markdown
 reactapp.md
 
-# designs
-/src/scss
-/src/svg
+#vscode
+.vscode/scss.code-snippets
 
 # dependencies
 /node_modules

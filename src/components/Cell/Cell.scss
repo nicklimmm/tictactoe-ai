@@ -1,0 +1,12 @@
+@import "../../scss/variables";
+
+.cell {
+  border-radius: 15px;
+  font-size: 3em;
+  font-family: "Finger Paint", sans-serif;
+  cursor: pointer;
+}
+
+.disabled {
+  pointer-events: none;
+}
